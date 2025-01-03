@@ -13,7 +13,6 @@ class Main extends PluginBase {
     protected function onEnable(): void {
         $this->getServer()->getCommandMap()->register("ping", new PingCommand("ping", "Check your ping", "/ping", ["p"], "inping.cmd"));
     }
-}
 
 class PingCommand extends Command {
 
