@@ -11,13 +11,13 @@ use pocketmine\utils\TextFormat;
 class Main extends PluginBase {
 
     protected function onEnable(): void {
-        $this->getServer()->getCommandMap()->register("ping", new PingCommand("ping", "Check your ping", "/ping", ["p"], "inping.cmd"));
+        $this->getServer()->getCommandMap()->register("ping", new PingCommand("ping", "Check your ping", "/ping", ["p"]));
     }
 }
 
 class PingCommand extends Command {
 
-    public function __construct(string $name, string $description = "", string $usageMessage = "", array $aliases = [], string $permission = "") {
+    public function __construct(string $name, string $description = "", string $usageMessage = "", array $aliases = []) {
         parent::__construct($name, $description, $usageMessage, $aliases);
         $this->setPermission("inping.cmd");
     }
