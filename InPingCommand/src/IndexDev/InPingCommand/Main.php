@@ -13,13 +13,14 @@ class Main extends PluginBase {
     protected function onEnable(): void {
         $this->getServer()->getCommandMap()->register("ping", new PingCommand("ping", "Check your ping", "/ping", ["p"], "inping.cmd"));
     }
+}
 
 class PingCommand extends Command {
 
-    public function __construct(string $name, string $description = "", string $usageMessage = "", array $aliases = []) {
+    public function __construct(string $name, string $description = "", string $usageMessage = "", array $aliases = [], string $permission = "") {
         parent::__construct($name, $description, $usageMessage, $aliases);
         $this->setPermission("inping.cmd");
-}
+    }
 
     public function execute(CommandSender $sender, string $commandLabel, array $args): bool {
         if (!$this->testPermission($sender)) {
